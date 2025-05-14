@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
   <title>My LIFF app</title>
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
+
 <body>
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
@@ -69,11 +71,11 @@
     }
 
     function getContext() {
-      document.getElementById("type").append(liff.getContext().type)
-      document.getElementById("viewType").append(liff.getContext().viewType)
-      document.getElementById("utouId").append(liff.getContext().utouId)
-      document.getElementById("roomId").append(liff.getContext().roomId)
-      document.getElementById("groupId").append(liff.getContext().groupId)
+      document.getElementById("type").append(context.type || "-");
+      document.getElementById("viewType").append(context.viewType || "-");
+      document.getElementById("utouId").append(context.utouId || "-");
+      document.getElementById("roomId").append(context.roomId || "-");
+      document.getElementById("groupId").append(context.groupId || "-");
     }
 
     async function getUserProfile() {
@@ -91,7 +93,7 @@
       document.getElementById("version").append(liff.getVersion())
       document.getElementById("accessToken").append(liff.getAccessToken())
       document.getElementById("isInClient").append(liff.isInClient())
-      if (liff.isInClient()){
+      if (liff.isInClient()) {
         document.getElementById("btnLogOut").style.display = "none"
       } else {
         document.getElementById("btnMsg").style.display = "none"
@@ -111,4 +113,5 @@
     main()
   </script>
 </body>
+
 </html>
