@@ -77,7 +77,7 @@
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
-      // document.getElementById("decodedIDToken").append(profile.decodedIDToken)
+      document.getElementById("decodedIDToken").append(liff.getdecodedIDToken().email)
     }
 
     function getEnvironment() {
@@ -96,7 +96,6 @@
     }
 
     async function main() {
-      // alert("LINE Developers x Skooldio")
       await liff.init({ liffId: "2007407575-49V1Lz2B" })
       getEnvironment()
       getUserProfile()
