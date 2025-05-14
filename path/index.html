@@ -36,17 +36,11 @@
 
   async function main() {
       await liff.init({ liffId: "2007412833-wey0GB7J" })
-      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
       if (liff.isLoggedIn()){
-        getEnvironment()
         getUserProfile()
-        getContext()
-        getFriendship()
       }else {
         liff.login({redirectUri: "https://finggy.github.io/LIFF/path"})
       }
-      
-      createUniversalLink()
     }
     main()
   </script>
