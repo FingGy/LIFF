@@ -63,6 +63,13 @@
     }
 
     async function getFriendship() {
+      const friend = await liff.getfriendship()
+      document.getElementById("friendship").append(friend.friendFlag)
+      if (!friend.friendFlag){
+        if (confirm("You cannt add BOT You want to add now")){
+          window.location = "@355lfcym"
+        }
+      }
     }
 
     async function sendMsg() {
@@ -115,7 +122,7 @@
       getEnvironment()
       getUserProfile()
       getContext()
-      // getFriendship()
+      getFriendship()
       // createUniversalLink()
     }
     main()
